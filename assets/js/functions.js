@@ -31,7 +31,7 @@ function promptCarManufacturer() {
 
         iconManufacturers.src = icon; 
         imgCar.src = img;
-        result.innerHTML = manufacturer.toUpperCase() + " " + car.toUpperCase();
+        result.innerHTML = car.toUpperCase();
     }
 
     let manufacturer = prompt("Choose one of the manufacturers below.").toLowerCase();
