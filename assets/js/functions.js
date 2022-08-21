@@ -24,7 +24,7 @@ function promptCarManufacturer() {
         ferrari: "ferrari"
     };
 
-    function choice(img, icon, manufacturer, car) {
+    function choice(img, icon, car) {
         const iconManufacturers = document.getElementById('iconManufacturers');
         const imgCar = document.getElementById('carSelected');
         const result = document.getElementById('result');
@@ -32,6 +32,20 @@ function promptCarManufacturer() {
         iconManufacturers.src = icon; 
         imgCar.src = img;
         result.innerHTML = car.toUpperCase();
+    }
+
+    function changeCaseFirstLetter(params) {
+        if(typeof params === 'string') {
+                return params.charAt(0).toUpperCase() + params.slice(1);
+        }
+        return null;
+    }
+    
+
+    function invalid() {
+        const invalidResult = document.getElementById('invalid_result');
+        invalidResult.innerHTML = "Invalid vehicle from " + 
+        changeCaseFirstLetter(manufacturer) + ".";
     }
 
     let manufacturer = prompt("Choose one of the manufacturers below.").toLowerCase();
@@ -42,18 +56,18 @@ function promptCarManufacturer() {
 
         if (car == carsKoenigsegg.one) {
             img = "assets/img/koenigsegg/one_1.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else if (car == carsKoenigsegg.agera) {
             img = "assets/img/koenigsegg/agera_r.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else if (car == carsKoenigsegg.ccx) {
             img = "assets/img/koenigsegg/ccx.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else {
-            document.write("<p> Invalid vehicle from Koenigsegg. </p>");
+            invalid();
         }
     }
         
@@ -63,18 +77,18 @@ function promptCarManufacturer() {
 
         if (car == carsPagani.zondaC12) {
             img = "assets/img/pagani_automobili/zonda_c12.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else if (car == carsPagani.zondaCinque) {
             img = "assets/img/pagani_automobili/zonda_cinque.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else if (car == carsPagani.huayra) {
             img = "assets/img/pagani_automobili/huayra.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else {
-            document.write("<p> Invalid vehicle from Pagani. </p>");
+            invalid();
         }
     }
 
@@ -84,18 +98,18 @@ function promptCarManufacturer() {
 
         if (car == carsFerrari.laFerrari) {
             img = "assets/img/ferrari/laferrari.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else if (car == carsFerrari.f12) {
             img = "assets/img/ferrari/f12.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else if (car == carsFerrari.f458Italia) {
             img = "assets/img/ferrari/458_italia.jpg";
-            choice(img, icon, manufacturer, car);
+            choice(img, icon, car);
         }
         else {
-            document.write("<p> Invalid vehicle from Ferrari. </p>");
+            invalid();
         }
     }
 
