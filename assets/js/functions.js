@@ -48,11 +48,11 @@ function promptCarManufacturer() {
         changeCaseFirstLetter(manufacturer) + ".";
     }
 
-    let manufacturer = prompt("Choose one of the manufacturers below.").toLowerCase();
+    let manufacturer = prompt("Choose one of the manufacturers below:\n Koenigsegg\n Pagani\n Ferrari").toLowerCase();
 
     if (manufacturer == manufacturers.koenigsegg) {
         let icon = "assets/img/koenigsegg/koenigsegg_logo.png";
-        let car = prompt("Choose one of the Koenigsegg cars below.").toLowerCase(); 
+        let car = prompt("Choose one of the Koenigsegg cars below:\n One\n Agera R\n CCX").toLowerCase(); 
 
         if (car == carsKoenigsegg.one) {
             img = "assets/img/koenigsegg/one_1.jpg";
@@ -73,7 +73,7 @@ function promptCarManufacturer() {
         
     else if (manufacturer == manufacturers.pagani) {
         let icon = "assets/img/pagani_automobili/pagani_logo.png";
-        let car = prompt("Choose one of the Pagani cars below.").toLowerCase(); 
+        let car = prompt("Choose one of the Pagani cars below:\nZonda C12\n Zonda Cinque\n Huayra").toLowerCase(); 
 
         if (car == carsPagani.zondaC12) {
             img = "assets/img/pagani_automobili/zonda_c12.jpg";
@@ -94,7 +94,7 @@ function promptCarManufacturer() {
 
     else if (manufacturer == manufacturers.ferrari) {
         let icon = "assets/img/ferrari/ferrari_logo.png";
-        let car = prompt("Choose one of the Ferrari cars below.").toLowerCase(); 
+        let car = prompt("Choose one of the Ferrari cars below:\nLaFerrari \nF12 \n458 Italia").toLowerCase(); 
 
         if (car == carsFerrari.laFerrari) {
             img = "assets/img/ferrari/laferrari.jpg";
