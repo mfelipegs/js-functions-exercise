@@ -10,21 +10,33 @@
 </head>
 
 <body>
-    
-<section class="container">
-    <div class="img_car item">
-        <img id="carSelected">
-    </div>
+    <h1 id="chooseManufacturers"></h1>
 
-    <div class="sub_container">
-        <div class="logo item">
-            <img id="iconManufacturers">
+    <select id="cboManufacturers">
+        <option value=""></option>
+        <option value="koenigsegg">Koenigsegg</option>
+        <option value="pagani">Pagani</option>
+        <option value="ferrari">Ferrari</option>
+    </select>
+
+    <input type="button" id="btnChooseM" value="Choose">
+    <ul class="carsList">
+        <li></li>
+    </ul>
+    <section class="container">
+        <div class="img_car item">
+            <img id="carSelected">
         </div>
 
-        <p id="result" class="item"></p>
-    </div>
-    <p id="invalid_result"></p>
-</section>
+        <div class="sub_container">
+            <div class="logo item">
+                <img id="iconManufacturers">
+            </div>
+
+            <p id="result" class="item"></p>
+        </div>
+        <p id="invalid_result"></p>
+    </section>
 
 <script type="text/javascript" src="assets/js/functions.js"></script>
 </body>
