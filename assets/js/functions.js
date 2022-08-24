@@ -16,7 +16,7 @@ function promptCarManufacturer() {
         huayra: "huayra",
         zondaC12: "zonda c12",
         zondaCinque: "zonda cinque"
-    };
+    };      
 
     let manufacturers = { 
         koenigsegg: "koenigsegg",
