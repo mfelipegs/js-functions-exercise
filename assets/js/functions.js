@@ -49,116 +49,61 @@ function promptCarManufacturer() {
     }
 
 
-    let h1_chooseManufacturers = document.getElementById('chooseManufacturers');
+    const h1_chooseManufacturers = document.getElementById('chooseManufacturers');
     h1_chooseManufacturers.innerHTML = "Choose one of the manufacturers below:";
+    const h1_chooseCars = document.getElementById('chooseCars');
+    const buttonchoose = document.getElementById('btnChooseM');
+    buttonchoose.addEventListener("click", chooseManufacturer);
 
-
-    function cleanChooseManufacturers() {
-        h1_chooseManufacturers.outerHTML = "";
-    }
-
-    function cleanChooseCars() {
+    /* function chooseCars() {
         
-    }
-    manufacturer = document.getElementById("cboManufacturers");
+    }*/
 
-    for (i = 0; i < manufacturer.length; i = i + 1) {
-        console.log(manufacturer.options[i]);
-    }
+    function chooseManufacturer() {
+        let cbo_manufacturer = document.getElementById("cboManufacturers");
+        let manufacturer = cbo_manufacturer.options[cbo_manufacturer.selectedIndex].value;
+        let cbo_car = document.getElementById("cboCars");
+        let car = cbo_car.options[cbo_car.selectedIndex].value;
 
-    document.getElementById("btnChooseM").onclick = function() {
-        var comboManufacturers = document.getElementById("cboManufacturers");
-    
-        var opt0 = document.createElement("option");
-        opt0.value = "0";
-        opt0.text = "";
-        cboManufacturers.add(opt0, cboManufacturers.options[0]);
-    
-        var opt1 = document.createElement("option");
-        opt1.value = "koenigsegg";
-        opt1.text = "Koenigsegg";
-        cboManufacturers.add(opt1, cboManufacturers.options[1]);
-    
-        var opt2 = document.createElement("option");
-        opt2.value = "pagani";
-        opt2.text = "Pagani Automobili Modena";
-        cboManufacturers.add(opt2, cboManufacturers.options[2]);
-    
-        var opt3 = document.createElement("option");
-        opt3.value = "ferrari";
-        opt3.text = "Ferrari";
-        cboManufacturers.add(opt3, cboManufacturers.options[3]);
-    
-    };
-
-    console.log(cboManufacturers.selectedIndex);
-
-    if (manufacturer == manufacturers.koenigsegg) {
-        let icon = "assets/img/koenigsegg/koenigsegg_logo.png";
-        let car = prompt("Choose one of the Koenigsegg cars below:\n One\n Agera R\n CCX").toLowerCase(); 
-
-        if (car == carsKoenigsegg.one) {
-            img = "assets/img/koenigsegg/one_1.jpg";
-            choice(img, icon, car);
+        function cleanChooseManufacturers() {
+            h1_chooseManufacturers.outerHTML = "";
+            cbo_manufacturer.outerHTML = "";
+            buttonchoose.outerHTML = "";
         }
-        else if (car == carsKoenigsegg.agera) {
-            img = "assets/img/koenigsegg/agera_r.jpg";
-            choice(img, icon, car);
+    
+        function cleanChooseCars() {
+            
         }
-        else if (car == carsKoenigsegg.ccx) {
-            img = "assets/img/koenigsegg/ccx.jpg";
-            choice(img, icon, car);
+
+        if (manufacturer == manufacturers.koenigsegg) {
+            let icon = "assets/img/koenigsegg/koenigsegg_logo.png";
+            cleanChooseManufacturers();
+            h1_chooseCars.innerHTML = "Choose one of the Koenigsegg cars below:";
+
+            if (car == carsKoenigsegg.one) {
+                img = "assets/img/koenigsegg/one_1.jpg";
+                choice(img, icon, car);
+            }
+            else if (car == carsKoenigsegg.agera) {
+                img = "assets/img/koenigsegg/agera_r.jpg";
+                choice(img, icon, car);
+            }
+            else if (car == carsKoenigsegg.ccx) {
+                img = "assets/img/koenigsegg/ccx.jpg";
+                choice(img, icon, car);
+            }
+            else {
+                invalid();
+            }
+        }
+        else if(manufacturer == manufacturers.pagani) {
+            console.log("pagani selecionado");
         }
         else {
-            invalid();
+            console.log("nada selecionado");
         }
     }
-        
-    else if (manufacturer == manufacturers.pagani) {
-        let icon = "assets/img/pagani_automobili/pagani_logo.png";
-        let car = prompt("Choose one of the Pagani cars below:\nZonda C12\n Zonda Cinque\n Huayra").toLowerCase(); 
-
-        if (car == carsPagani.zondaC12) {
-            img = "assets/img/pagani_automobili/zonda_c12.jpg";
-            choice(img, icon, car);
-        }
-        else if (car == carsPagani.zondaCinque) {
-            img = "assets/img/pagani_automobili/zonda_cinque.jpg";
-            choice(img, icon, car);
-        }
-        else if (car == carsPagani.huayra) {
-            img = "assets/img/pagani_automobili/huayra.jpg";
-            choice(img, icon, car);
-        }
-        else {
-            invalid();
-        }
-    }
-
-    else if (manufacturer == manufacturers.ferrari) {
-        let icon = "assets/img/ferrari/ferrari_logo.png";
-        let car = prompt("Choose one of the Ferrari cars below:\nLaFerrari \nF12 \n458 Italia").toLowerCase(); 
-
-        if (car == carsFerrari.laFerrari) {
-            img = "assets/img/ferrari/laferrari.jpg";
-            choice(img, icon, car);
-        }
-        else if (car == carsFerrari.f12) {
-            img = "assets/img/ferrari/f12.jpg";
-            choice(img, icon, car);
-        }
-        else if (car == carsFerrari.f458Italia) {
-            img = "assets/img/ferrari/458_italia.jpg";
-            choice(img, icon, car);
-        }
-        else {
-            invalid();
-        }
-    }
-
-    else {
-        promptCarManufacturer();
-    }
+    chooseManufacturer();
 }
 
 promptCarManufacturer();
