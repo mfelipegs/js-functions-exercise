@@ -107,3 +107,26 @@ function promptCarManufacturer() {
 }
 
 promptCarManufacturer();
+
+let sai = [
+    { 
+        koenigsegg: "koenigsegg",
+        pagani: "pagani",
+        ferrari: "ferrari"
+    },
+    { 
+        koenigsegg: "2",
+        pagani: "pagani",
+        ferrari: "ferrari"
+    },
+    { 
+        koenigsegg: "3",
+        pagani: "pagani",
+        ferrari: "ferrari"
+    }
+
+]
+
+sai.map((item) =>{
+    console.log(item.koenigsegg)
+})
