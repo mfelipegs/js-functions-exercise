@@ -32,10 +32,11 @@ function mainCar() {
         //icon_manufacturer.src = icon; 
 
         //result.innerHTML = car.toUpperCase();
-        var iconImgManufacturer = `<img src='${icon}'/>`;
+        //var iconImgManufacturer = `<img src='${icon}'/>`;
+        let iconImgManufacturer = document.createElement('img');
         iconImgManufacturer.src = icon;
         console.log(iconImgManufacturer);
-        document.getElementById('body').append(iconImgManufacturer);
+        document.body.append(iconImgManufacturer);
         console.log(icon);
 
         write_img = document.write(img + "<br>");
@@ -49,7 +50,6 @@ function mainCar() {
     h1_chooseN.innerHTML = "How many times do you want it to appear?";
     const buttonchoose = document.getElementById('btnChoose');
     buttonchoose.addEventListener("click", chooseCar);
-    
     
 
     function chooseCar() {
@@ -69,7 +69,7 @@ function mainCar() {
         for(var i = 1; i <= n; i++) {
             if (car == carsKoenigsegg.agera) {
                 cleanChoose();
-                let icon = "../img/koenigsegg/koenigsegg_logo.png";
+                let icon = "assets/img/koenigsegg/koenigsegg_logo.png";
                 let img = "<img src='assets/img/koenigsegg/agera_r.jpg'>";
                 choice(img, icon);
                 //document.write("<img src='assets/img/koenigsegg/agera_r.jpg'>" + "<br>");
