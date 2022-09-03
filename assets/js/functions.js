@@ -1,21 +1,21 @@
-function promptCarManufacturer() {
+function mainCar() {
     
     let carsKoenigsegg = {
         one: "one",
-        agera: "agera r",
+        agera: "agera_r",
         ccx: "ccx"
     };
 
     let carsFerrari = {
         laFerrari: "laferrari",
         f12: "f12",
-        f458Italia: "458 italia"
+        f458Italia: "f458_italia"
     };
 
     let carsPagani = {
         huayra: "huayra",
-        zondaC12: "zonda c12",
-        zondaCinque: "zonda cinque"
+        zondaC12: "zonda_c12",
+        zondaCinque: "zonda_cinque"
     };      
 
     let manufacturers = { 
@@ -24,109 +24,68 @@ function promptCarManufacturer() {
         ferrari: "ferrari"
     };
 
-    function choice(img, icon, car) {
-        const iconManufacturers = document.getElementById('iconManufacturers');
-        const imgCar = document.getElementById('carSelected');
-        const result = document.getElementById('result');
+    function choice(img, icon) {
+        //const icon_manufacturer = document.getElementById('iconManufacturers');
+        //const result = document.getElementById('result');
 
-        iconManufacturers.src = icon; 
-        imgCar.src = img;
-        result.innerHTML = car.toUpperCase();
+        //console.log(icon_manufacturer);
+        //icon_manufacturer.src = icon; 
+
+        //result.innerHTML = car.toUpperCase();
+        var iconImgManufacturer = `<img src='${icon}'/>`;
+        iconImgManufacturer.src = icon;
+        console.log(iconImgManufacturer);
+        document.getElementById('body').append(iconImgManufacturer);
+        console.log(icon);
+
+        write_img = document.write(img + "<br>");
+
+        
     }
 
-    function changeCaseFirstLetter(params) {
-        if(typeof params === 'string') {
-                return params.charAt(0).toUpperCase() + params.slice(1);
-        }
-        return null;
-    }
+    const h1_chooseCars = document.getElementById('chooseCars');
+    h1_chooseCars.innerHTML = "Choose one of the manufacturers below:";
+    const h1_chooseN = document.getElementById('chooseN');
+    h1_chooseN.innerHTML = "How many times do you want it to appear?";
+    const buttonchoose = document.getElementById('btnChoose');
+    buttonchoose.addEventListener("click", chooseCar);
+    
     
 
-    function invalid() {
-        const invalidResult = document.getElementById('invalid_result');
-        invalidResult.innerHTML = "Invalid vehicle from " + 
-        changeCaseFirstLetter(manufacturer) + ".";
-    }
-
-
-    const h1_chooseManufacturers = document.getElementById('chooseManufacturers');
-    h1_chooseManufacturers.innerHTML = "Choose one of the manufacturers below:";
-    const h1_chooseCars = document.getElementById('chooseCars');
-    const buttonchoose = document.getElementById('btnChooseM');
-    buttonchoose.addEventListener("click", chooseManufacturer);
-
-    /* function chooseCars() {
-        
-    }*/
-
-    function chooseManufacturer() {
-        let cbo_manufacturer = document.getElementById("cboManufacturers");
-        let manufacturer = cbo_manufacturer.options[cbo_manufacturer.selectedIndex].value;
+    function chooseCar() {
         let cbo_car = document.getElementById("cboCars");
         let car = cbo_car.options[cbo_car.selectedIndex].value;
+        let textbox_n = document.getElementById("ntimes");
+        let n = parseInt(document.getElementById("ntimes").value);
 
-        function cleanChooseManufacturers() {
-            h1_chooseManufacturers.outerHTML = "";
-            cbo_manufacturer.outerHTML = "";
-            buttonchoose.outerHTML = "";
+        function cleanChoose() {
+            h1_chooseCars.remove();
+            h1_chooseN.remove();
+            cbo_car.remove();
+            textbox_n.remove();
+            buttonchoose.remove();
         }
-    
-        function cleanChooseCars() {
-            
-        }
-
-        if (manufacturer == manufacturers.koenigsegg) {
-            let icon = "assets/img/koenigsegg/koenigsegg_logo.png";
-            cleanChooseManufacturers();
-            h1_chooseCars.innerHTML = "Choose one of the Koenigsegg cars below:";
-
-            if (car == carsKoenigsegg.one) {
-                img = "assets/img/koenigsegg/one_1.jpg";
-                choice(img, icon, car);
+        
+        for(var i = 1; i <= n; i++) {
+            if (car == carsKoenigsegg.agera) {
+                cleanChoose();
+                let icon = "../img/koenigsegg/koenigsegg_logo.png";
+                let img = "<img src='assets/img/koenigsegg/agera_r.jpg'>";
+                choice(img, icon);
+                //document.write("<img src='assets/img/koenigsegg/agera_r.jpg'>" + "<br>");
+                console.log(typeof n);
+                
             }
-            else if (car == carsKoenigsegg.agera) {
-                img = "assets/img/koenigsegg/agera_r.jpg";
-                choice(img, icon, car);
-            }
+
             else if (car == carsKoenigsegg.ccx) {
-                img = "assets/img/koenigsegg/ccx.jpg";
-                choice(img, icon, car);
+                cleanChoose();
+                let icon = "assets/img/koenigsegg/koenigsegg_logo.png";
+                choice(car, icon);
+                //document.write("<img src='assets/img/koenigsegg/agera_r.jpg'>" + "<br>");
             }
-            else {
-                invalid();
-            }
         }
-        else if(manufacturer == manufacturers.pagani) {
-            console.log("pagani selecionado");
-        }
-        else {
-            console.log("nada selecionado");
-        }
+        
     }
-    chooseManufacturer();
+    chooseCar();
 }
-
-promptCarManufacturer();
-
-let sai = [
-    { 
-        koenigsegg: "koenigsegg",
-        pagani: "pagani",
-        ferrari: "ferrari"
-    },
-    { 
-        koenigsegg: "2",
-        pagani: "pagani",
-        ferrari: "ferrari"
-    },
-    { 
-        koenigsegg: "3",
-        pagani: "pagani",
-        ferrari: "ferrari"
-    }
-
-]
-
-sai.map((item) =>{
-    console.log(item.koenigsegg)
-})
+mainCar();

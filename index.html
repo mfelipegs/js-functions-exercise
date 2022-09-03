@@ -9,29 +9,30 @@
 
 </head>
 
-<body>
-    <h1 id="chooseManufacturers"></h1>
-    <select id="cboManufacturers">
-        <option value=""></option>
-        <option value="koenigsegg">Koenigsegg</option>
-        <option value="pagani">Pagani</option>
-        <option value="ferrari">Ferrari</option>
-    </select>
-    <input type="button" id="btnChooseM" value="Choose">
-    
+<body id="body">
     <h1 id="chooseCars"></h1>
     <select id="cboCars">
         <option value=""></option>
-        <option value="car1"></option>
-        <option value="car2"></option>
-        <option value="car3"></option>
+        <option value="agera_r">Koenigsegg Agera R</option>
+        <option value="ccx">Koenigsegg CCX</option>
+        <option value="one">Koenigsegg One:1</option>
+        <option value="laferrari">LaFerrari</option>
+        <option value="f12">Ferrari F12</option>
+        <option value="f458_italia">Ferrari 458 Italia</option>
+        <option value="huayra">Pagani Huayra</option>
+        <option value="zonda_c12">Pagani Zonda C12</option>
+        <option value="zonda_cinque">Pagani Zonda Cinque</option>
     </select>
-    <input type="button" id="btnChooseC" value="Choose">
     
+    <h1 id="chooseN"></h1>
+    <input type="text" size="2" id="ntimes"><br>
+    
+    <input type="button" id="btnChoose" value="Choose">
 
     <section class="container">
         <div class="img_car item">
-            <img id="carSelected">
+            <!-- img id="carSelected" -->
+            
         </div>
 
         <div class="sub_container">
@@ -44,6 +45,6 @@
         <p id="invalid_result"></p>
     </section>
 
-<script type="text/javascript" src="assets/js/functions.js"></script>
+<script type="text/javascript" src="assets/js/functions.js" defer></script>
 </body>
 </html>
