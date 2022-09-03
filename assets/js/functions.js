@@ -18,14 +18,10 @@ function mainCar() {
         zondaCinque: "zonda_cinque"
     };      
 
-    let manufacturers = { 
-        koenigsegg: "koenigsegg",
-        pagani: "pagani",
-        ferrari: "ferrari"
-    };
-
     function printCar(imgCar) {
         let carPicture = document.createElement('img');
+        let br = document.createElement('br');
+        document.body.append(br);
         carPicture.src = imgCar;
         console.log(carPicture);
         document.body.append(carPicture);
@@ -67,6 +63,7 @@ function mainCar() {
             buttonchoose.remove();
         }
 
+        //Koenigsegg cars
         for (const k of Object.keys(carsKoenigsegg)) {
             if(car == carsKoenigsegg[k]) {
                 cleanChoose();
@@ -77,7 +74,68 @@ function mainCar() {
                     if(car == carsKoenigsegg.agera) {
                         let imgCar = "assets/img/koenigsegg/agera_r.jpg";
                         printCar(imgCar);
-                        console.log(n);
+                    }
+
+                    if(car == carsKoenigsegg.one) {
+                        let imgCar = "assets/img/koenigsegg/one_1.jpg";
+                        printCar(imgCar);
+                    }
+
+                    if(car == carsKoenigsegg.ccx) {
+                        let imgCar = "assets/img/koenigsegg/ccx.jpg";
+                        printCar(imgCar);
+                    }
+                }
+            }
+        }
+
+        //Ferrari cars
+        for (const k of Object.keys(carsFerrari)) {
+            if(car == carsFerrari[k]) {
+                cleanChoose();
+                let icon = "assets/img/ferrari/ferrari_logo.png";
+                verifyManufacturer(icon, car);
+
+                for(var i = 1; i <= n; i++) {
+                    if(car == carsFerrari.f12) {
+                        let imgCar = "assets/img/ferrari/f12.jpg";
+                        printCar(imgCar);
+                    }
+
+                    if(car == carsFerrari.laFerrari) {
+                        let imgCar = "assets/img/ferrari/laferrari.jpg";
+                        printCar(imgCar);
+                    }
+
+                    if(car == carsFerrari.f458Italia) {
+                        let imgCar = "assets/img/ferrari/458_italia.jpg";
+                        printCar(imgCar);
+                    }
+                }
+            }
+        }
+
+        //Pagani cars
+        for (const k of Object.keys(carsPagani)) {
+            if(car == carsPagani[k]) {
+                cleanChoose();
+                let icon = "assets/img/pagani_automobili/pagani_logo.png";
+                verifyManufacturer(icon, car);
+
+                for(var i = 1; i <= n; i++) {
+                    if(car == carsPagani.huayra) {
+                        let imgCar = "assets/img/pagani_automobili/huayra.jpg";
+                        printCar(imgCar);
+                    }
+
+                    if(car == carsPagani.zondaC12) {
+                        let imgCar = "assets/img/pagani_automobili/zonda_c12.jpg";
+                        printCar(imgCar);
+                    }
+
+                    if(car == carsPagani.zondaCinque) {
+                        let imgCar = "assets/img/pagani_automobili/zonda_cinque.jpg";
+                        printCar(imgCar);
                     }
                 }
             }
