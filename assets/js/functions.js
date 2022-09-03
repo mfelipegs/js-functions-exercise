@@ -24,23 +24,24 @@ function mainCar() {
         ferrari: "ferrari"
     };
 
-    function choice(img, icon) {
-        //const icon_manufacturer = document.getElementById('iconManufacturers');
-        //const result = document.getElementById('result');
+    function printCar(imgCar) {
+        let carPicture = document.createElement('img');
+        carPicture.src = imgCar;
+        console.log(carPicture);
+        document.body.append(carPicture);
+        console.log(imgCar);
+        //tester.innerHTML = img + "<br>";
+    }
 
-        //console.log(icon_manufacturer);
-        //icon_manufacturer.src = icon; 
-
-        //result.innerHTML = car.toUpperCase();
-        //var iconImgManufacturer = `<img src='${icon}'/>`;
+    function verifyManufacturer(icon, car) {
         let iconImgManufacturer = document.createElement('img');
         iconImgManufacturer.src = icon;
         console.log(iconImgManufacturer);
         document.body.append(iconImgManufacturer);
         console.log(icon);
 
-        write_img = document.write(img + "<br>");
-
+        const result = document.getElementById('result');
+        result.innerHTML = car.toUpperCase().split("_").join(" ");
         
     }
 
@@ -65,15 +66,31 @@ function mainCar() {
             textbox_n.remove();
             buttonchoose.remove();
         }
-        
-        for(var i = 1; i <= n; i++) {
-            if (car == carsKoenigsegg.agera) {
+
+        for (const k of Object.keys(carsKoenigsegg)) {
+            if(car == carsKoenigsegg[k]) {
                 cleanChoose();
                 let icon = "assets/img/koenigsegg/koenigsegg_logo.png";
+                verifyManufacturer(icon, car);
+                
+                for(var i = 1; i <= n; i++) {
+                    if(car == carsKoenigsegg.agera) {
+                        let imgCar = "assets/img/koenigsegg/agera_r.jpg";
+                        printCar(imgCar);
+                        console.log(n);
+                    }
+                }
+            }
+        }
+
+        /*for(var i = 1; i <= n; i++) {
+            if (car == carsKoenigsegg.agera) {
+                cleanChoose();
+                //let icon = "assets/img/koenigsegg/koenigsegg_logo.png";
                 let img = "<img src='assets/img/koenigsegg/agera_r.jpg'>";
-                choice(img, icon);
+                printCar(img);
                 //document.write("<img src='assets/img/koenigsegg/agera_r.jpg'>" + "<br>");
-                console.log(typeof n);
+                //console.log(typeof n);
                 
             }
 
@@ -83,7 +100,7 @@ function mainCar() {
                 choice(car, icon);
                 //document.write("<img src='assets/img/koenigsegg/agera_r.jpg'>" + "<br>");
             }
-        }
+        }*/
         
     }
     chooseCar();
