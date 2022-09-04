@@ -38,13 +38,20 @@ function mainCar() {
 
         const result = document.getElementById('result');
         result.innerHTML = car.toUpperCase().split("_").join(" ");
+        result.style.color = "white";
+        result.style.fontWeight = "900";
+        result.style.display = "flex";
+        result.style.justifyContent = "center";
+        result.style.alignItems = "center";
         
     }
 
     const h1_chooseCars = document.getElementById('chooseCars');
     h1_chooseCars.innerHTML = "Choose one of the manufacturers below:";
+    h1_chooseCars.style.color = "white";
     const h1_chooseN = document.getElementById('chooseN');
     h1_chooseN.innerHTML = "How many times do you want it to appear?";
+    h1_chooseN.style.color = "white";
     const buttonchoose = document.getElementById('btnChoose');
     buttonchoose.addEventListener("click", chooseCar);
     

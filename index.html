@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Functions Exercise - Choose the Car</title>
-    
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body id="body">
+    <div class="container_choose">
     <h1 id="chooseCars"></h1>
-    <select id="cboCars">
+    <select id="cboCars" class="cbo_cars">
         <option value=""></option>
         <option value="agera_r">Koenigsegg Agera R</option>
         <option value="ccx">Koenigsegg CCX</option>
@@ -25,10 +26,11 @@
     </select>
     
     <h1 id="chooseN"></h1>
-    <input type="text" size="2" id="ntimes"><br>
+    <input type="text" size="2" id="ntimes" class="tb_times"><br>
     
-    <input type="button" id="btnChoose" value="Choose">
-
+    <input type="button" id="btnChoose" value="Choose" class="btn_choose">
+    </div>
+    
     <section class="container">
         <div class="img_car item">
             <!-- img id="carSelected" -->
